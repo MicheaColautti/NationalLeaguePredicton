@@ -54,7 +54,7 @@ Con l'opzione `--players` viene prodotto anche `player_stats.csv`, contenente le
 
 I dataset includono anche gli incontri futuri presenti nel calendario SIHF. I relativi risultati restano mancanti; gli indicatori pregara vanno aggiornati man mano che vengono disputate altre partite.
 
-La [guida alle colonne dei CSV e alle sigle SIHF](output/pdf/Guida_dataset_National_League_SIHF.pdf) descrive i campi e le etichette delle statistiche.
+La [guida alle colonne dei CSV e alle sigle SIHF](docs/Guida_dataset_National_League_SIHF.pdf) descrive i campi e le etichette delle statistiche.
 
 ## Modelli e valutazione
 
@@ -64,11 +64,11 @@ Per i gol nei 60 minuti vengono confrontati modelli di Poisson, XGBoost con obie
 
 La procedura:
 
-1. utilizza soltanto risultati precedenti alla data da prevedere;
-2. costruisce gli indicatori di ogni giornata prima di aggiornare lo storico con i risultati di quella giornata;
-3. confronta i modelli con una validazione temporale per stagione;
-4. riserva le ultime due stagioni disponibili a un test temporale separato dalla selezione;
-5. riaddestra i modelli scelti sullo storico precedente alla data richiesta e genera le previsioni.
+1. Utilizza soltanto risultati precedenti alla data da prevedere;
+2. Costruisce gli indicatori di ogni giornata prima di aggiornare lo storico con i risultati di quella giornata;
+3. Confronta i modelli con una validazione temporale per stagione;
+4. Riserva le ultime due stagioni disponibili a un test temporale separato dalla selezione;
+5. Riaddestra i modelli scelti sullo storico precedente alla data richiesta e genera le previsioni.
 
 La selezione del modello per il vincitore usa la **log loss**. Sono riportati anche **accuratezza** e **Brier score**. Per i gol vengono utilizzati **devianza di Poisson** e **errore assoluto medio (MAE)**.
 
